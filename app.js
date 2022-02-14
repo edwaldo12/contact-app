@@ -6,7 +6,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 
-require('./utils/db');
+const mongoose = require('mongoose');
 const Contact = require('./model/contact');
 const { Mongoose } = require('mongoose');
 
@@ -69,10 +69,6 @@ app.get('/about', (req, res,next) => {
 
 //Halaman contact
 app.get('/contact', async (req, res) => {
-    // let contacts = Contact.find().then((contact) => {
-    //     res.send(contact);
-    // });
-
     const contacts = await Contact.find();
 
     console.log(contacts);
@@ -190,7 +186,22 @@ app.put('/contact', [
      }
     });
 
+    
+mongoose.connect('mongodb+srv://edwaldo:edwaldo1234@clusters.apbe4.mongodb.net/wpu', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+}).then((result) => {
+    console.log(mongoose.connection.readyState);
+}).catch((error) => {
+    console.log(error);
+}).finally(() => {
+    console.log("Experiment completed");
+});
+
+
+
 app.listen(port, () => {
-    console.log(`Mongo Contact App | listening at http://localhost:${port}`);
+console.log(`Mongo Contact App | listening at http://localhost:${port}`);
 });
 
