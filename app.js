@@ -6,9 +6,25 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 
-const mongoose = require('mongoose');
-const Contact = require('./model/contact');
+// const mongoose = require('mongoose');
+// const Contact = require('./model/contact');
 const { Mongoose } = require('mongoose');
+
+const mongoose = require('mongoose');
+
+const Contact = mongoose.model('Contact', {
+    nama: {
+        type: String,
+        required:true
+    },
+    nohp: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+    },
+});
 
 const app = express();
 const port = process.env.PORT || 3000;
