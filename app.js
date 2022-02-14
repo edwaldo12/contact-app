@@ -37,20 +37,20 @@ app.use(flash());
 app.get('/', (req, res) => {
     const mahasiswa = [
         {
-            nama: 'Sandhika Galih',
-            email: 'sandhikagalih@gmail.com'
+            nama: 'Edo',
+            email: 'edo@gmail.com'
         },
         {
-            nama: 'Sandhika Galih1',
-            email: 'sandhikagalih1@gmail.com'
+            nama: 'Joseph',
+            email: 'joseph@gmail.com'
         },
         {
-            nama: 'Sandhika Galih2',
-            email: 'sandhikagalih2@gmail.com'
+            nama: 'budi',
+            email: 'budi@gmail.com'
         },
     ];
     res.render('index', {
-        nama: 'Sandhika Galih',
+        nama: 'Project mini',
         title: 'Home',
         mahasiswa,
         layout : 'layouts/main-layout'
