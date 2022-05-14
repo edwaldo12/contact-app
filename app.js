@@ -59,12 +59,12 @@ app.get("/", (req, res) => {
       email: "rizki@gmail.com",
     },
     {
-      nama: "Bagas",
-      email: "bagas@gmail.com",
+      nama: "yantok",
+      email: "yantok@gmail.com",
     },
     {
-      nama: "refa",
-      email: "refa@gmail.com",
+      nama: "wanti",
+      email: "wanti@gmail.com",
     },
   ];
   res.render("index", {
